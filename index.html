@@ -10,7 +10,7 @@
 
 <!-- NAVIGATION -->
 <nav class="navbar">
-    <div class="logo"><img src="img/logo.png" alt="logo.jpeg"></div>
+    <div class="logo"><img src="img/logo.png" al"></div>
 
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="burger">&#9776;</label>
@@ -38,36 +38,82 @@
     </div>
 </header>
 
+<section class="menu-section">
+    <h2>Nos Plats Phares</h2>
+
+    <div class="menu-grid">
+        <div class="card">
+            <img src="img/Yassa Poulet.jpeg" alt="img/Yassa Poulet.jpeg">
+            <h3>Yassa poulet</h3>
+            <p>Mariné aux épices locales, grillé au feu de bois.</p>
+            <span>3000 FCFA</span>
+        </div>
+
+        <div class="card">
+            <img src="img/Riz.jpeg" alt="img/Riz.jpeg">
+            <h3>Riz au Poisson </h3>
+            <p>Fraîcheur du jour accompagné de légumes sautés.</p>
+            <span>3500 FCFA</span>
+        </div>
+
+        <div class="card">
+            <img src="img/Mafé.jpeg" alt="img/Mafé.jpeg">
+            <h3>Mafé</h3>
+            <p>Recette traditionnelle revisitée.</p>
+            <span>2500 FCFA</span>
+        </div>
+    </div>
+
+    <div class="menu-buttons">
+        <a href="#boissons" class="btn primary">Boissons</a>
+        <a href="#desserts" class="btn primary">Desserts</a>
+        <a href="#special" class="btn primary">Menus Spéciaux</a>
+    </div>
+</section>
+
+<section class="galerie">
+    <h2>Galerie</h2>
+
+    <div class="galerie-grid">
+        <img src="img/Restaurant.jpg">
+        <img src="img/Athiéké Poisson.jpeg">
+        <img src="img/Sauce Viande.jpeg">
+        <img src="img/Yassa Poulet.jpeg">
+        <img src="img/Ambiance familiale.jpeg">
+        <img src="img/Service repas.jpeg">
+    </div>
+</section>
+
 <!-- POPUP MENU -->
-<div id="menuModal" class="modal">
+<div id="boissons" class="modal">
     <div class="modal-content">
         <a href="#" class="close">&times;</a>
-        <h2>Notre Menu</h2>
-
-        <h3>Plats</h3>
-        <ul>
-            <li>Mafé - 3000 FCFA
-                <img src="img/Mafé.jpeg" alt="img/Mafé.jpeg">
-            </li>
-            <li>Yassa Poulet - 2500 FCFA
-            <img src="img/Yassa Poulet.jpeg" alt="img/Yassa Poulet.jpeg">    
-            </li>
-            <li>Riz au poisson - 3500 FCFA
-                <img src="img/Riz.jpeg" alt="img/Riz.jpeg">
-            </li>
-        </ul>
-
         <h3>Boissons</h3>
         <ul>
-            <li>Jus naturel - 1000 FCFA
-                <img src="img/jus.jpeg" alt="img/jus.jpeg">
-                <img src="img/Jus Naturel.jpeg" alt="img/Jus Naturel.jpeg">
-            </li>
-            <li>Soda - 800 FCFA
-                <img src="img/Soda.jpeg" alt="img/Soda.jpeg">
-            </li>
+            <li>Jus naturel - 1000 FCFA</li>
+            <li>Soda - 800 FCFA</li>
         </ul>
     </div>
 </div>
 
-</body>
+<div id="desserts" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Desserts</h3>
+        <ul>
+            <li>Fondant chocolat - 1500 FCFA</li>
+            <li>Salade de fruits - 1200 FCFA</li>
+        </ul>
+    </div>
+</div>
+
+<div id="special" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Menus Spéciaux</h3>
+        <ul>
+            <li>Menu Famille - 10 000 FCFA</li>
+            <li>Menu Duo - 6 500 FCFA</li>
+        </ul>
+    </div>
+</div>
