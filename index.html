@@ -17,10 +17,10 @@
 
     <ul class="nav-links">
         <li><a href="#">Accueil</a></li>
-        <li><a href="#menuModal">Notre Menu</a></li>
+        <li><a href="#menu">Notre Menu</a></li>
         <li><a href="#">Offres spéciales</a></li>
-        <li><a href="#">Réservation</a></li>
-        <li><a href="#">Galerie</a></li>
+        <li><a href="#reservation">Réservation</a></li>
+        <li><a href="#galerie">Galerie</a></li>
         <li><a href="#">Témoignages</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
@@ -32,55 +32,54 @@
         <h1>Délice & Co</h1>
         <p>Le feu au cœur de la saveur</p>
         <div class="buttons">
-            <a href="#" class="btn primary">Réserver une table</a>
+            <a href="#reservation" class="btn primary">Réserver une table</a>
             <a href="#" class="btn secondary">Commander</a>
         </div>
     </div>
 </header>
 
-<section class="menu-section">
+<!-- Menu -->
+<section id="menu" class="menu-section">
     <h2>Nos Plats Phares</h2>
 
     <div class="menu-grid">
         <div class="card">
-            <img src="img/Yassa Poulet.jpeg" alt="img/Yassa Poulet.jpeg">
-            <h3>Yassa poulet</h3>
-            <p>Mariné aux épices locales, grillé au feu de bois.</p>
+            <img src="img/Mafé.jpeg">
+            <h3>Mafé</h3>
+            <p>Recette traditionnelle</p>
             <span>3000 FCFA</span>
         </div>
-
         <div class="card">
-            <img src="img/Riz.jpeg" alt="img/Riz.jpeg">
-            <h3>Riz au Poisson </h3>
-            <p>Fraîcheur du jour accompagné de légumes sautés.</p>
-            <span>3500 FCFA</span>
-        </div>
-
-        <div class="card">
-            <img src="img/Mafé.jpeg" alt="img/Mafé.jpeg">
-            <h3>Mafé</h3>
-            <p>Recette traditionnelle revisitée.</p>
+            <img src="img/Yassa Poulet.jpeg">
+            <h3>Yassa Poulet</h3>
+            <p>Recette traditionnelle revisitée</p>
             <span>2500 FCFA</span>
         </div>
+        <div class="card">
+            <img src="img/Riz.jpeg">
+            <h3>Riz au Gras</h3>
+            <p> Accompagné de légume sautés.</p>
+            <span>3500 FCFA</span>
+        </div>
     </div>
 
+    
     <div class="menu-buttons">
-        <a href="#boissons" class="btn primary">Boissons</a>
-        <a href="#desserts" class="btn primary">Desserts</a>
-        <a href="#special" class="btn primary">Menus Spéciaux</a>
+       <a href="#boissons" class="btn primary">Boissons</a>
+        <a href="#desserts" class="btn secondary">Desserts</a>
+        <a href="#special" class="btn danger">Menus Spéciaux</a>
     </div>
 </section>
-
-<section class="galerie">
-    <h2>Galerie</h2>
-
+<!-- Galerie -->
+<section id="galerie" class="galerie">
+    <h2>Galeries</h2>
     <div class="galerie-grid">
-        <img src="img/Restaurant.jpg">
-        <img src="img/Athiéké Poisson.jpeg">
-        <img src="img/Sauce Viande.jpeg">
+        <img src="img/Mafé.jpeg">
         <img src="img/Yassa Poulet.jpeg">
-        <img src="img/Ambiance familiale.jpeg">
-        <img src="img/Service repas.jpeg">
+        <img src="img/Riz.jpeg">
+        <img src="img/Soda.jpeg" alt="img/Soda.jpeg">
+        <img src="img/jus.jpeg" alt="img/jus.jpeg">
+        <img src="img/Jus Naturel.jpeg" alt="img/Jus Naturel.jpeg">
     </div>
 </section>
 
@@ -90,22 +89,72 @@
         <a href="#" class="close">&times;</a>
         <h3>Boissons</h3>
         <ul>
-            <li>Jus naturel - 1000 FCFA</li>
-            <li>Soda - 800 FCFA</li>
-        </ul>
-    </div>
-</div>
-
-<div id="desserts" class="modal">
-    <div class="modal-content">
-        <a href="#" class="close">&times;</a>
-        <h3>Desserts</h3>
-        <ul>
             <li>Fondant chocolat - 1500 FCFA</li>
             <li>Salade de fruits - 1200 FCFA</li>
         </ul>
     </div>
 </div>
+<div id="desserts" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Desserts</h3>
+        <ul>
+            <li>Fondan chocolat - 1500</li>
+            <li> Salade de fruits - 2000</li>
+        </ul>
+    </div>
+</div>
+<div id="special" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Menus spéciaux</h3>
+        <ul>
+            <li> Menu Famille - 10000 FCFA
+                <img src="img/plats.jpg" alt="">
+            </li>
+            <li> Menu Duo - 8000 FCFA
+                <img src="img/plats.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Réservation -->
+<section id="reservation" class="reservation-section">
+    <div class="container">
+        <h2>Réservation</h2>
+        <p class="tittle">
+            Réservez une table ou passez une commande en ligne en un clic!
+        </p>
+        <form class="reservation-form">
+            <div class="form-group">
+                <label for="fullname">Nom & Prénom</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="datetime"> Date & Heure</label>
+                <input type="datetime-local" id="datetime" name="datetime" required>
+            </div>
+            <div class="form-group">
+                <label for="guest"> Nbr de personnes</label>
+                <input type="number" id="guest" name="guest" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="phone"> Téléphone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email"> Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message"> Commentaires ou Demandes spéciales </label>
+                <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Réserver maintenant</button>
+        </form>
+    </div>
+</section>
 
 <div id="special" class="modal">
     <div class="modal-content">
