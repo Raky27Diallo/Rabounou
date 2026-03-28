@@ -1,0 +1,133 @@
+/* RESET */
+body {
+    background-color: #f4f4f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TITRE */
+h2 {
+    color: #333;
+    font-weight: bold;
+}
+
+/* BOUTON RETOUR */
+.btn-outline-dark {
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* BOUTON AJOUT */
+.btn-success {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+}
+
+/* TABLE */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.table th {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* LIGNES HOVER */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.2s ease;
+}
+
+/* BOUTON SUPPRIMER */
+.btn-danger {
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #a30000;
+}
+
+/* MODAL */
+.modal-content {
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* INPUTS */
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* FOCUS INPUT */
+.form-control:focus {
+    border-color: #a3b18a;
+    box-shadow: 0 0 5px rgba(163, 177, 138, 0.5);
+}
+
+/* ERREURS */
+.text-danger {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* TOAST */
+.toast {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .btn-success {
+        width: 100%;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+}

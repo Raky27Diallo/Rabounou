@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Délice & Co</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <!-- Retour -->
+    <a href="index.html" class="btn btn-outline-dark mb-3">← Retour au site</a>
+
+    <h2 class="mb-4 text-center">Gestion des employés - Délice & Co</h2>
+
+    <!-- Bouton Ajouter -->
+    <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+        Ajouter un employé
+    </button>
+
+    <!-- TABLE -->
+    <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Matricule</th>
+                <th>Service</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+</div>
+
+<!-- ================= MODAL AJOUT ================= -->
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter un employé</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <input type="text" id="prenom" class="form-control mb-2" placeholder="Prénom *">
+                <small class="text-danger" id="errPrenom"></small>
+
+                <input type="text" id="nom" class="form-control mb-2" placeholder="Nom *">
+                <small class="text-danger" id="errNom"></small>
+
+                <input type="text" id="adresse" class="form-control mb-2" placeholder="Adresse *">
+                <small class="text-danger" id="errAdresse"></small>
+
+                <input type="text" id="matricule" class="form-control mb-2" placeholder="Matricule *">
+                <small class="text-danger" id="errMatricule"></small>
+
+                <select id="service" class="form-control mb-2">
+                    <option value="">Choisir un service *</option>
+                    <option>Cuisine</option>
+                    <option>Service</option>
+                    <option>Caisse</option>
+                    <option>Livraison</option>
+                    <option>Management</option>
+                </select>
+                <small class="text-danger" id="errService"></small>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button class="btn btn-primary" onclick="addEmployee()">Enregistrer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ================= MODAL CONFIRM ================= -->
+<div class="modal fade" id="confirmModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content text-center p-3">
+            <p>Confirmer la suppression ?</p>
+            <button class="btn btn-danger" onclick="confirmDelete()">OK</button>
+            <button class="btn btn-secondary mt-2" data-bs-dismiss="modal">Annuler</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast" class="toast">
+        <div class="toast-body bg-success text-white">
+            Suppression réussie ✅
+        </div>
+    </div>
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+
+let deleteRow = null;
+let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+function addEmployee() {
+
+    let prenom = document.getElementById("prenom").value.trim();
+    let nom = document.getElementById("nom").value.trim();
+    let adresse = document.getElementById("adresse").value.trim();
+    let matricule = document.getElementById("matricule").value.trim();
+    let service = document.getElementById("service").value;
+
+    document.querySelectorAll(".text-danger").forEach(e => e.innerText = "");
+
+    let valid = true;
+
+    if (!prenom) { errPrenom.innerText = "Champ obligatoire"; valid = false; }
+    if (!nom) { errNom.innerText = "Champ obligatoire"; valid = false; }
+    if (!adresse) { errAdresse.innerText = "Champ obligatoire"; valid = false; }
+    if (!matricule) { errMatricule.innerText = "Champ obligatoire"; valid = false; }
+    if (!service) { errService.innerText = "Champ obligatoire"; valid = false; }
+
+    if (!valid) return;
+
+    let employee = { prenom, nom, adresse, matricule, service };
+
+    employees.push(employee);
+
+    localStorage.setItem("employees", JSON.stringify(employees));
+
+    renderTable();
+
+    bootstrap.Modal.getInstance(document.getElementById('addModal')).hide();
+}
+
+function renderTable() {
+    let table = document.getElementById("tableBody");
+    table.innerHTML = "";
+
+    employees.forEach((emp, index) => {
+        table.innerHTML += `
+        <tr>
+            <td>${emp.prenom}</td>
+            <td>${emp.nom}</td>
+            <td>${emp.adresse}</td>
+            <td>${emp.matricule}</td>
+            <td>${emp.service}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteEmployee(${index})">
+                    Supprimer
+                </button>
+            </td>
+        </tr>
+        `;
+    });
+}
+
+
+// SUPPRESSION
+function deleteEmployee(index) {
+    deleteRow = index;
+    new bootstrap.Modal(document.getElementById('confirmModal')).show();
+}
+
+function confirmDelete() {
+
+    employees.splice(deleteRow, 1);
+
+    localStorage.setItem("employees", JSON.stringify(employees));
+
+    renderTable();
+
+    bootstrap.Modal.getInstance(document.getElementById('confirmModal')).hide();
+
+    let toast = new bootstrap.Toast(document.getElementById('toast'));
+    toast.show();
+}
+
+// CONFIRMATION
+function confirmDelete() {
+    deleteRow.remove();
+
+    bootstrap.Modal.getInstance(document.getElementById('confirmModal')).hide();
+
+    let toast = new bootstrap.Toast(document.getElementById('toast'));
+    toast.show();
+}
+window.onload = function() {
+    renderTable();
+}
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
