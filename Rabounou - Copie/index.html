@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Délices & Co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="logo"><img src="img/logo.png" al"></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="burger">&#9776;</label>
+
+    <ul class="nav-links">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#menu">Notre Menu</a></li>
+        <li><a href="#">Offres spéciales</a></li>
+        <li><a href="#reservation">Réservation</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#testimonials">Témoignages</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#Employés">Employés</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Délice & Co</h1>
+        <p>Le feu au cœur de la saveur</p>
+        <div class="buttons">
+            <a href="#reservation" class="btn primary">Réserver une table</a>
+            <a href="#" class="btn secondary">Commander</a>
+        </div>
+    </div>
+</header>
+
+<!-- Menu -->
+<section id="menu" class="menu-section">
+    <h2>Nos Plats Phares</h2>
+
+    <div class="menu-grid">
+        <div class="card">
+            <img src="img/Mafé.jpeg">
+            <h3>Mafé</h3>
+            <p>Recette traditionnelle</p>
+            <span>3000 FCFA</span>
+        </div>
+        <div class="card">
+            <img src="img/Yassa Poulet.jpeg">
+            <h3>Yassa Poulet</h3>
+            <p>Recette traditionnelle revisitée</p>
+            <span>2500 FCFA</span>
+        </div>
+        <div class="card">
+            <img src="img/Riz.jpeg">
+            <h3>Riz au Gras</h3>
+            <p> Accompagné de légume sautés.</p>
+            <span>3500 FCFA</span>
+        </div>
+    </div>
+
+    
+    <div class="menu-buttons">
+       <a href="#boissons" class="btn primary">Boissons</a>
+        <a href="#desserts" class="btn secondary">Desserts</a>
+        <a href="#special" class="btn danger">Menus Spéciaux</a>
+    </div>
+</section>
+<!-- Galerie -->
+<section id="galerie" class="galerie">
+    <h2>Galeries</h2>
+    <div class="galerie-grid">
+        <img src="img/Mafé.jpeg">
+        <img src="img/Yassa Poulet.jpeg">
+        <img src="img/Riz.jpeg">
+        <img src="img/Soda.jpeg" alt="img/Soda.jpeg">
+        <img src="img/jus.jpeg" alt="img/jus.jpeg">
+        <img src="img/Jus Naturel.jpeg" alt="img/Jus Naturel.jpeg">
+    </div>
+</section>
+
+<!-- POPUP MENU -->
+<div id="boissons" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Boissons</h3>
+        <ul>
+            <li>Bissap - 1000 FCFA</li>
+            <li>Limonade - 1200 FCFA</li>
+        </ul>
+    </div>
+</div>
+<div id="desserts" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Desserts</h3>
+        <ul>
+            <li>Fondan chocolat - 1500</li>
+            <li> Salade de fruits - 2000</li>
+        </ul>
+    </div>
+</div>
+<div id="special" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Menus spéciaux</h3>
+        <ul>
+            <li> Menu Famille - 10000 FCFA
+                <img src="img/plats.jpg" alt="">
+            </li>
+            <li> Menu Duo - 8000 FCFA
+                <img src="img/plats.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Réservation -->
+<section id="reservation" class="reservation-section">
+    <div class="container">
+        <h2>Réservation</h2>
+        <p class="tittle">
+            Réservez une table ou passez une commande en ligne en un clic !
+        </p>
+
+        <div class="reservation-container">
+            <p class="reservation-legend">
+                <span class="info-badge">i</span> 
+                Les champs marqués d'un <span class="required">*</span> sont obligatoires.
+            </p>
+
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label for="fullname">Nom & Prénom <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Ex: Raky Oumar Diallo" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="datetime">Date & Heure <span class="required">*</span></label>
+                        <input type="datetime-local" id="datetime" name="datetime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guest">Nbr de personnes <span class="required">*</span></label>
+                        <input type="number" id="guest" name="guest" min="1" placeholder="Ex: 2" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Téléphone <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+221 ..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Commentaires ou Demandes spéciales</label>
+                    <textarea name="message" id="message" rows="4" placeholder="Une allergie ? Une occasion spéciale ?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Réserver maintenant</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Témoignages -->
+ <section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2 class="section-title">Ce que disent nos clients</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <img src="img/boury.jpeg" alt="Boury Diallo" width="90" height="90">
+                <h3>Boury Diallo</h3>
+                <p>"Une expérience incroyable ! Les plats sont savoureux et le service est impeccable."</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="img/Malick Traoré.jpeg" alt="Malick Traoré"  width="90" height="90">
+                <h3>Malick Traoré</h3>
+                <p>"Le meilleur mafé que j’ai goûté. Ambiance chaleureuse et cuisine authentique."</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="img/Ramlatou.jpeg" alt="Ramlatou"  width="90" height="90">
+                <h3>Ramlatou Hane</h3>
+                <p>"Je recommande à 100%. Un restaurant qui mérite sa réputation."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contactez-nous</h2>
+        <p class="contact-legend">
+    <span class="info-badge">i</span> 
+    Les champs marqués d'un <span class="required">*</span> sont obligatoires pour valider votre message.
+</p>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <h4>Adresse <span class="required">*</span></h4>
+                        <p>123 Rue Gourmande, Dakar, Sénégal</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icon">📞</span>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p><a href="tel:+221771234567">+221 77 123 45 67</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icon">✉️</span>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:contact@restaurant.com">contact@restaurant.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Prénom & Nom <span class="required">*</span></label>
+                        <input type="text" placeholder="Votre nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone<span class="required">*</span></label>
+                        <input type="tel" placeholder="+221 ...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Votre adresse Email <span class="required">*</span></label>
+                    <input type="email" placeholder="exemple@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Objet <span class="required">*</span></label>
+                    <input type="text" placeholder="Sujet de votre message" required>
+                </div>
+                <div class="form-group">
+                    <label>Message <span class="required">*</span></label>
+                    <textarea placeholder="Comment pouvons-nous vous aider ?" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Employés -->
+<section id="Employés" class="py-5">
+    <div class="container">
+        <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 1100px;">
+            <div class="card-header bg-dark text-white p-3 rounded-top-4">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <h3 class="fw-bold mb-0 flex-grow-1"><i class="bi bi-people-fill me-2"></i> LISTE DES EMPLOYÉS</h3>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="input-group shadow-sm rounded-pill bg-white overflow-hidden" style="width: 300px; height: 45px;">
+                            <span class="input-group-text bg-white border-0 ps-3"><i class="bi bi-search text-muted"></i></span>
+                            <input type="text" id="searchInput" class="form-control border-0 shadow-none ps-2" placeholder="Rechercher...">
+                        </div>
+                        <button type="button" class="btn btn-warning fw-bold rounded-pill px-4 shadow-sm text-uppercase" id="btnOuvrirAjout" style="height: 45px;">
+                            <i class="bi bi-plus-circle-fill me-2"></i>Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-secondary text-uppercase small">
+                            <tr>
+                                <th class="ps-4 py-3">Matricule</th>
+                                <th>Prénom</th>
+                                <th>Nom</th>
+                                <th>Service</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="modalEmploye" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header bg-light border-bottom-0 rounded-top-4">
+                <h5 class="fw-bold mb-0" id="modalTitle">Formulaire Employé</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="formEmploye" novalidate>
+                <div class="modal-body p-4">
+                    <input type="hidden" id="editId">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small text-uppercase">Matricule (*)</label>
+                        <input type="text" id="inputMatricule" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small text-uppercase">Prénom (*)</label>
+                        <input type="text" id="inputPrenom" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small text-uppercase">Nom (*)</label>
+                        <input type="text" id="inputNom" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small text-uppercase">Service (*)</label>
+                        <select id="inputService" class="form-select" required>
+                            <option value="">-- Choisir --</option>
+                            <option value="Cuisine">Cuisine</option>
+                            <option value="Salle">Salle</option>
+                            <option value="Administration">Administration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 p-4 pt-0">
+                    <button type="submit" class="btn btn-dark rounded-pill px-4 w-100">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow-lg rounded-3">
+            <div class="modal-header bg-danger text-white py-2">
+                <h5 class="modal-title fs-6">Confirmation</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <p class="mb-0">Êtes-vous sûr de vouloir supprimer cet employé ?</p>
+            </div>
+            <div class="modal-footer border-0 bg-light py-2">
+                <button type="button" class="btn btn-light border px-3 py-1" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" id="btnConfirmOK" class="btn btn-danger px-4 py-1">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</tbody>
+    </table>
+</div> </div> </div> </div> </section> 
+    <div class="container text-center">
+    </div>
+</footer>
+   
+</footer>
+   <footer class="bg-dark text-light py-5 mt-5 border-top border-4" style="border-color: #a3b18a !important;">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <h3 class="fw-bold mb-3" style="color: #a3b18a;">Délices & Co</h3>
+                <p class="text-secondary">L'art de la cuisine sénégalaise authentique au cœur de Dakar et Guédiawaye.</p>
+                
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h5 class="fw-bold mb-3">Réseau Sociaux</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com/facebook/?locale=fr_FR" class="text-secondary text-decoration-none hover-link">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/" class="text-secondary text-decoration-none hover-link">Instagram</a></li>
+                    <li><a href="https://x.com/?lang=fr" class="text-secondary text-decoration-none hover-link">Twitter</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-3">Légal</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://cuisinedelice-recettes.fr/fr/mentions-legales" class="text-secondary text-decoration-none hover-link">Mentions légales</a></li>
+                    <li><a href="https://cuisinedelice-recettes.fr/fr/politique-de-confidentialite" class="text-secondary text-decoration-none hover-link">Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-3">Contact</h5>
+                <p class="text-secondary mb-1"><i class="bi bi-geo-alt me-2"></i> Guédiawaye, Dakar</p>
+                <p class="text-secondary"><i class="bi bi-telephone me-2"></i> +221 77 123 45 67</p>
+            </div>
+        </div>
+
+        <hr class="my-4 border-secondary">
+        <div class="text-center text-secondary small">
+            <p class="mb-0">&copy; 2026 Restaurant Délices & Co. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
